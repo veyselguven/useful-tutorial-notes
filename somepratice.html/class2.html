@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mammal {
+        constructor(name) {
+          this.name = name;
+          this.offspring = [];
+        }
+        sayHello() {
+          return `My name is ${this.name}, I'm a ${this.constructor.name}`;
+        }
+        haveBaby() {
+          const child = new Mammal(`Baby ${this.name}`);
+          this.offspring.push(child);
+          return child;
+        }
+      }
+
+      class Cat extends Mammal {
+        constructor(name, color) {
+          super(name);
+          this.color = color;
+        }
+        meow() {
+          return "meow";
+        }
+        haveBaby(color) {
+          const greenCat = new Cat(`Baby ${this.name}`, color);
+          this.offspring.push(greenCat);
+          return greenCat;
+        }
+      }
+
+      class Dog extends Mammal {
+        constructor(name, breed) {
+          super(name);
+          this.breed = breed;
+        }
+        bark() {
+          "RUFF RUFF";
+        }
+        haveBaby(type) {
+          let beagle = new Dog(`Baby ${this.name}`, type);
+          this.offspring.push(beagle);
+          return beagle;
+        }
+      }
+
+      /////////////////////////////////
+      ////////////////////////////////
+      ///////////////////////////////
+      //////////////////////////////
+      /////////////////////////////
+
+      class Laptop {
+        constructor(year, hd) {
+          this.year = year;
+          this.hd = hd;
+        }
+        checkSpecs() {
+          return `Year: ${this.year}, HD:${this.hd}`;
+        }
+      }
+      /////////////////////////////////
+      /////////////////////////////////
+      ////////////////////////////////
+      ///////////////////////////////
+      //////////////////////////////
+      /////////////////////////////
+      class Macbook extends Laptop {
+        constructor(year, hd, color) {
+          super(year, hd);
+          this.color = color;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Helloworld</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+For in dongusu;
+
+Bir nesnenin veya dizinin ozelliklerine erismek icin kullaniyoruz.
+
+
+
+*/
+
+      //nesne ornegi;
+
+      var kurslar = { kurs1: "php", kurs2: "bootsrap" };
+
+      for (key in kurslar) {
+        document.write(kurslar[key] + "<br>");
+      }
+
+      // dizi ornegi
+
+      var egitimler = new Array("php", "bootstrap");
+
+      for (key in egitimler) {
+        document.write(egitimler[key] + "<br/>");
+      }
+      var abc = [{ kurs1: "php", kurs2: "bootsrap" }];
+
+      for (let key in abc) {
+        console.log(abc[key]);
+      }
+      let a = "VeyselBasbaydar";
+
+      for (let ch of a) {
+        console.log(ch);
+      }
+      a = [1, 2, 3, 4];
+      b = [1, 4, 5, 7, 5];
+      c = [...a, ...b];
+      console.log(c.sort());
+    </script>
+  </body>
+</html>

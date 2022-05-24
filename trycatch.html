@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello world</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+// try catch
+/*
+
+olusabilcek hatalari ongorerek sonrasinda neler olmasi gerektigini belirledigimiz yapidir.
+*/
+/*
+
+var a =10;
+
+try {
+
+document.write(a+b);
+
+
+}catch(err){
+
+	document.write('hatali islem :'+err);
+}
+
+*/
+// hatalari yakaliyoruz catch te.
+
+
+// try throw
+/*
+var a=10;
+var b=20;
+
+
+try{
+
+
+	if(a<b){
+		throw "buyuk";
+	}
+
+document.write(a+"ve"+b);
+
+} catch(err){
+
+
+
+	if (err=="buyuk"){
+
+
+		document.write("a sayisi b den buyuk olamaz");
+	}
+}
+
+
+// yukarida a b den kucuk biz o zaman throw olarak err a buyuk gonderiyoruz.
+
+//o zaman ikinci if ifadesi ise bize dioki err esitse buyuk e  documente  yazdigimiz yaziyi yazsin dioruz.
+
+
+
+// ozellestirilmis hatalar icin try throw yapisini kullaniyoruz.
+
+*/
+
+
+
+//try catch finally
+
+
+var a=10;
+ 
+ 
+
+
+try {
+
+document.write(a+b);
+
+ }catch(err){
+
+document.write(err);
+} finally{
+
+	document.write( "<br/>" +a);
+} 
+
+
+/// tyr catch finally Hata olussada olusmasada veya  hata donse bile hatali islem varsa bile ben belli basli bir kodu gostermek istiyorsam onun icin finally blogunu kullaniyoruz
+
+
+
+</script>
+
+
+
+</body>
+</html>

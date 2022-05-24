@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>basld</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+let pusheen={
+	name:'pusheen',
+	age:7,
+	color:'gray',
+	owner:'Joe'
+}
+/*
+for (let key in pusheen){
+	console.log(pusheen[key])
+
+};
+
+
+*/
+
+let makearray=Object.keys(pusheen);
+
+console.log(makearray);
+
+
+//console.log(makearray[1]); => age
+
+for( let i=0; i<makearray.length; i++){
+
+let veysel=pusheen[makearray[i]];
+console.log(veysel);
+}
+console.log(typeof veysel);
+console.log(typeof makearray);
+
+</script>
+</body>
+</html>

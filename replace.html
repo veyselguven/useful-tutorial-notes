@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mehrbaa</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // replace
+
+      var e = "Ben Udemy Egitmeniyim Emrah Yuksel  gitmenim ulan Yuksel";
+
+      document.write(e.replace("Yuksel", ""));
+
+      // belli bir string in icerisinde bir kelimenin yerine baska bir kelime ile degistirebiliyorum.ornekte oldugu gibi yuksel kelimesini ahmet kelimesi ile degistirdim.
+
+      // iki tane ayni kelimeden olursa sadece ilk kelimeyi dondurur.
+
+      // bu replace string nesnelerin icerisine mudale etmiyor yani tekrar yazdigidiginda eski halini alir
+
+      // duzenli bir sekilde almak istersen bu duzelttigin seyi bir degiskene ata ole kullan.
+
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write(e);
+
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // eger olurda komple degismesini istersek yani 22.satidaki gibi deilde dondurmek istedigimiz butun kelimeleri degistirmek istersek
+
+      // ayrica buyuk harf ve kucuk harf duyarligii vardir ama bu duyarligigi  ortadan kaldirmak istersek, (/veysel/gi,'Ahmet') yaparak degistiririz.
+
+      document.write(e.replace(/Yuksel/g, "Veysel"));
+
+      document.write("<br/>");
+
+      var y =
+        "Ben Udemy Egitmeniyim Emrah Yuksel  gitmenim ulan Yuksel veysel yuksel";
+
+      document.write(y.replace(/yuksel/gi, "alex"));
+
+      var s = "unicorn and rainbows";
+      console.log(s.replace(/unicorn/, "cupcakes")); //"cupcakes and rainbows"
+      // it doesnt modify u r orginal array
+      var b = "unicorn and rainbows and cupcakes"; // w{6,8} word between 6 ile 8
+      console.log(b.replace(/\w{6,8}/, "kittens")); //kittens and rainbows and cupcakes
+      console.log(b.replace(/\w{6,8}/g, "kittens")); //kittens and kittens and kittens
+      var c = "unicorn and rainbows and cupcakes";
+      console.log(c.replace(/([aeiou])/g, "$1$1")); //uuniicoorn aand raaiinboows aand cuupcaakees
+      console.log(c.replace(/[aeiou]/g, "$1$1")); //uuniicoorn aand raaiinboows aand cuupcaakees
+      const myStr = "Hey, I am 25 and she is 31";
+      console.log(myStr.replace("and", "&")); //Hey, I am 25 & she is 31
+      console.log(myStr.replace(/\d+/, "20")); // the first number //Hey, I am 20 and she is 31
+      console.log(myStr.replace(/\d+/g, "20")); // the first number and global //Hey, I am 20 and she is 20
+    </script>
+  </body>
+</html>

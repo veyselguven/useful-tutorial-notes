@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// length dizinin eleman sayisini verir.
+
+
+
+	
+var kurslar = new	Array('php','bootstrap4','Jquery','Javascript','Python','c++',8,9,9,7,5,3,20,44,10);
+
+
+var say=kurslar.length;
+
+
+document.write('Bu dizinin eleman sayisi: '+kurslar.length+'<br/>');
+
+
+for(i=0; i<say; i++)
+
+{
+
+
+
+document.write(kurslar[i]+"<br/>")
+
+
+
+}
+
+
+
+
+var x=[1,43,434,55,55,3,5,54,5,253,532,522,333,333,6,21];
+
+var sorted=x.sort((a,b) => b-a);
+
+
+console.log(sorted);
+
+let ab="www.asfaf.qwrsfas#asff";
+
+let sp=ab.split('#');
+
+console.log(sp);
+
+
+
+
+
+const addBinary=(a,b)=>{
+
+return (a+b).toString(2);
+
+}
+
+
+console.log(addBinary(5,9));
+
+
+let soryy=['sga','sgah','wegfaghbg','gfafa'];
+let veysel=soryy.sort((a,b)=>a.length-b.length);
+
+console.log(veysel);
+
+
+
+let vb =17;
+let sq=Math.sqrt(vb);
+
+let mq=sq%1;
+
+console.log(sq);
+
+ // str.split("").reverse().join("").split(" ").reverse().join(" ");
+
+
+let check="This is an example!" 
+
+console.log(check.split('').reverse().join('').split(' ').reverse().join(' '));
+
+
+
+
+const myStr="Hey, I am 25 and she is 31!";
+console.log(myStr.replace(/A/gi,'?'))
+
+const myStr2="Hey, I am 25 and she is 31!";
+console.log(myStr2.replace(/\d+/g,'22'))
+
+
+
+let example="This website is fori losers LOL!"
+
+
+ console.log(example.replace(/this/gi,'veysel'));
+ console.log(example.replace(/This/,'Samet'));
+console.log(example.replace(/\w{4}/g,'Samet'));
+console.log(example.replace(/[aeiuo]/g,''));
+
+
+
+  let n =25
+  let len = n.toString().length
+  let num = (n * n).toString().slice(-len)
+ if(n == num) {console.log('Automorphic') }
+ else { console.log('Not!')}
+
+
+
+
+
+console.log()
+</script>
+
+</body>
+</html>

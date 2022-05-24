@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const Jedi = function (firstName, lastName, lightsaber, level) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lightsaber = lightsaber;
+        this.level = level;
+      };
+      const lukeSkywalker = new Jedi("Luke", "Skywalker", "Green", "Master");
+      console.log(lukeSkywalker);
+      console.dir(Jedi);
+      console.log(Jedi.prototype); //{constructor: ƒ}
+      console.log(Object.getPrototypeOf(lukeSkywalker)); //{constructor: ƒ}
+      console.log(Jedi.hasOwnProperty("prototype")); // true
+      console.log(Jedi.prototype.constructor);
+      function normalFunction() {}
+
+      const normalFunctionPrototypeProperty = normalFunction.prototype;
+      const normalFunctionInternalPrototype =
+        Object.getPrototypeOf(normalFunction);
+      console.dir(normalFunctionInternalPrototype);
+      normalFunction.prototype.helloWorld = "hello world";
+      console.dir(normalFunction);
+      console.log("-------");
+      console.log("----------");
+      console.log("----------");
+      console.log("----------");
+
+      function CreateGitHubUser(username, billingPlan = "free") {
+        //creates an object
+        // this={}
+        this.billingPlan = billingPlan;
+        this.username = username;
+        this.repositories = [];
+        // implicitly returns the instance(this)
+      }
+
+      const scott = new CreateGitHubUser("scottdalleres");
+
+      CreateGitHubUser.prototype.hello = "hello Veysel"; // it goes to scotts internal prototype
+      console.log(scott);
+      console.log(CreateGitHubUser.prototype === Object.getPrototypeOf(scott)); //true
+      CreateGitHubUser.prototype.addrepo = function (name) {
+        this.repositories.push(name);
+      };
+      //scott.addrepo("Hayriiii");
+      console.log(scott);
+      CreateGitHubUser.prototype.changeusername = function (name) {
+        this.username = name;
+      };
+
+      scott.changeusername("Hatun");
+
+      console.log(scott);
+
+      console.log("-----------");
+      console.log("--------------");
+      console.log("------------");
+
+      function Vehicle(licensePlate, color) {
+        this.licensePlate = licensePlate;
+        this.color = color;
+      }
+      vehicle = new Vehicle(22589, "blue");
+
+      Vehicle.prototype.beep = function () {
+        return "BEEP, BEEP";
+      };
+      console.log(vehicle.beep());
+      Vehicle.prototype.changecolor = function (name) {
+        return (this.color = name);
+      };
+
+      vehicle.changecolor("red");
+      console.log(vehicle);
+      console.log(vehicle.color);
+
+      console.log("-----------");
+      console.log("--------------");
+      console.log("------------");
+
+      function Truck(licensePlate, color, transmission) {
+        this.licensePlate = licensePlate;
+        this.color = color;
+        this.transmission = transmission;
+      }
+
+
+      
+    </script>
+  </body>
+</html>

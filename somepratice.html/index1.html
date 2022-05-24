@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let people = [
+        { firstName: "Ada", lastName: "Bilgi" },
+        { firstName: "Yigit", lastName: "Bilgi" },
+        { firstName: "Cinar", lastName: "Turan" },
+      ];
+
+      const makeitregular = (people) => {
+        let result = [];
+        for (let i = 0; i < people.length; i++) {
+          result.push(people[i].firstName + " " + people.lastName);
+        }
+        return result;
+      };
+
+      console.log(makeitregular(people));
+      console.log("*************");
+
+      const snacks = {
+        fruit: "banana",
+        tastyTreats: ["carrot", "cake"],
+      };
+      console.log(snacks);
+      console.dir(snacks.fruit);
+      console.log(Object.getPrototypeOf(snacks.fruit));
+      console.log(snacks.fruit);
+      console.log(snacks.tastyTreats);
+      console.log("***********");
+      console.dir(snacks.tastyTreats);
+      console.log(Object.getPrototypeOf(snacks.tastyTreats));
+
+      const yumytr = ["cake", "choclate", "alex"];
+      //yumytr.push = "pust";
+      yumytr.push("veysel");
+      //console.log(yumytr);
+      console.dir(yumytr);
+
+      const twit = {
+        handle: "veysel",
+        pascode: "1234",
+      };
+      console.log(twit.hasOwnProperty("handle")); //trure
+      console.log(yumytr.hasOwnProperty("length")); //true
+      console.log("-----------");
+      console.log("-----------");
+      console.log(twit);
+      console.dir(twit);
+      console.log(Object.getPrototypeOf(twit.handle));
+      console.log("-----------");
+      console.log("-----------");
+      myObject = Object.create({ isim: "Hatun" }); // assgin to new object prototype;
+      console.log(myObject); // shows in the internal side(protoype)
+      console.dir(myObject); // as as above
+      console.log(myObject.isim); // hatun
+
+      const Basbaydar = {
+        login() {
+          console.log("Welcome to Basbaydar Family");
+        },
+        logout: function () {
+          console.log("Good Bye from Basbaydar Family");
+        },
+      };
+      let geman = Object.create(Basbaydar);
+      console.log(geman);
+      console.dir(geman);
+      geman.login();
+      geman.logout();
+      console.log("-----------");
+      console.log("-----------");
+      console.log("-----------");
+      console.log("-----------");
+
+      const iPhone = {
+        type: "iPhone",
+      };
+      //console.log(Object.getPrototypeOf(iPhone));
+
+      const pixel = {
+        type: "pixel",
+      };
+      //  console.log(Object.getPrototypeOf(pixel));
+      const internalPrototype = {
+        hello: "world",
+      };
+
+      const newObj = Object.create(internalPrototype);
+      console.log(newObj);
+      console.log(Object.getPrototypeOf(newObj));
+
+      const cellPhoneUtilities = {
+        turnOn() {
+          return "Phone is turned on";
+        },
+        createContact(name, number) {
+          return `Name: ${name} and  Number: ${number} added to your contacts!`;
+        },
+        connectToWifi() {
+          return "connected to wifi";
+        },
+      };
+
+      let iPhone8 = Object.create(cellPhoneUtilities);
+      iPhone8.type = "iPhone";
+      console.log(iPhone8);
+
+      console.log(Object.getPrototypeOf(iPhone8));
+
+      let pixel2 = Object.create(cellPhoneUtilities);
+      pixel2.type = "Pixel";
+      console.log(Object.getPrototypeOf(pixel2));
+      console.log(pixel2);
+      console.log(pixel2.connectToWifi());
+      console.log(iPhone8.turnOn());
+      console.log("---------");
+      const twitterUserPrototype = {
+        addfollower() {
+          return this.followers + 1;
+        },
+        getHandle() {
+          return `Here is my handle ${this.handle},follow me!`;
+        },
+      };
+      const nimitsAccount = Object.create(twitterUserPrototype);
+      nimitsAccount.handle = "@nimit";
+      nimitsAccount.followers = 0;
+      console.log(nimitsAccount);
+      console.log(nimitsAccount.getHandle());
+      const veyselsaccount = Object.create(twitterUserPrototype);
+      veyselsaccount.handle = "@veysel";
+      veyselsaccount.followers = 2143244;
+      console.log(veyselsaccount);
+      console.log(veyselsaccount.getHandle());
+      console.log(veyselsaccount.addfollower());
+      hatunsaccount = Object.create(twitterUserPrototype);
+      //console.log(hatunsaccount);
+      hatunsaccount.followers = 1234;
+      hatunsaccount.handle = "Hatuncuk";
+      console.log(hatunsaccount);
+
+      const faceproto = {
+        getHandle1() {
+          return `${this.handle}`;
+        },
+      };
+      const facefactory = (handle, followplease) => {
+        const newUser = Object.create(faceproto);
+        newUser.handle = handle;
+        newUser.followplease = followplease;
+        return newUser;
+      };
+      const veyselface = facefactory("@veysel", 12451);
+      console.log(veyselface.getHandle1());
+      //-------------------------------
+      //-------------------------------
+      let Humanpro = {
+        add: function (num) {
+          return (this.total += num);
+        },
+        subtract: function (num) {
+          return (this.total -= num);
+        },
+        value: function () {
+          return this.total;
+        },
+        clear: function () {
+          return (this.total = -10);
+        },
+      };
+
+      const createHumanCalculator = () => {
+        const humanCalculator = Object.create(Humanpro);
+        humanCalculator.total = -10;
+        return humanCalculator;
+      };
+      //let fc = createHumanCalculator();
+      console.log(createHumanCalculator().subtract(2)); //-12
+
+      car = ["bmw", "mercedes", "toyota"];
+
+      //car.forEach((item) => console.log(item));
+      car.forEach(function (item) {
+        if (item.length <= 3) {
+          console.log(item);
+        }
+      });
+      let insanlar = [
+        { ilkisim: "Ada", soyisim: "Karacuban" },
+        { ilkisim: "ahmet", soyisim: "Tarkocin" },
+        { ilkisim: "Naciye", soyisim: "basbaydar" },
+      ];
+
+      for (let i in insanlar) {
+        console.log("index " + i + "  " + insanlar[i].ilkisim);
+      }
+
+      insanlar.forEach((item) => {
+        console.log(item.firstName);
+      });
+
+      function join(arr, a) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+          result.push(arr[i]);
+        }
+        return result.join(a);
+      }
+
+      console.log(join(["veysel", "guven"]));
+
+      console.log("------------");
+
+      const gridGenerator = (n) => {
+        let result = "";
+        // i is the lines
+        for (let i = 0; i < 3; i++) {
+          // j is the characters
+          for (let j = 0; j < 3; j++) {
+            if ((i + j) % 2 == 0) result += "#";
+            else result += " ";
+          }
+          result += "\n";
+        }
+        return result;
+      };
+
+      console.log(gridGenerator(3));
+
+      let x = " ";
+      for (let i = 1; i <= 7; i++) {
+        for (let j = 1; j <= i; j++) {
+          x += j + " ";
+        }
+        x += "\n";
+      }
+      console.log(x);
+
+      let veli = { a: "34", b: 13, c: "asfa" };
+
+      let roberto = Object.keys(veli);
+      console.log(roberto);
+      let toppings = ["cherry", "chocolate-chips", "peanuts"];
+      console.log(toppings);
+      console.log(toppings.hasOwnProperty("join"));
+      console.log(toppings.join(" "));
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+
+      function traceTheChain(obj) {
+        let prototypeChainObjects = [];
+        while (Object.getPrototypeOf(obj)) {
+          obj = Object.getPrototypeOf(obj);
+          prototypeChainObjects.push(obj);
+        }
+        return prototypeChainObjects;
+      }
+
+      console.log(traceTheChain({ a: 10, b: 20 }));
+    </script>
+  </body>
+</html>

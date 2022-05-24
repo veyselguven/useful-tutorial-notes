@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var global = "global";
+      // let scope = "scope";
+
+      // function functionScope() {
+      //   var myScope = "myScope";
+      //   console.log(myScope);
+      //   console.log(global); // is global and "scope" accessible in the function?
+      //   console.log(scope);
+      // }
+      // functionScope();
+
+      // function normalFunction() {
+      //   return "hello World";
+      // }
+      // internal prototype of normalfunction is the same as prototype property
+      // console.dir(normalFunction);
+      // console.log(normalFunction.prototype); //{constructor: ƒ}
+      // console.log(normalFunction.hasOwnProperty("prototype")); //true
+      // console.log(normalFunction.prototype.constructor);
+      console.log("---------");
+      //console.log(Object.getPrototypeOf(normalFunction));
+      //ƒ normalFunction() {return "hello World";}
+
+      // function Goodbye() {}
+      // console.log(Goodbye.prototype.constructor);
+
+      // const user = {
+      //   name: "Onur",
+      //   sayhello() {
+      //     console.log(this);
+      //   },
+      // };
+      // console.dir(user);
+      // user.sayhello();
+      function Person(isim, soyad) {
+        this.isim = isim;
+        this.soyad = soyad;
+        this.depo = [];
+      }
+      let dogukan = new Person("Dogukan", "Kurt");
+      console.log(dogukan);
+      console.dir(Person);
+      Person.prototype.greeting = "helloDk";
+      console.log(dogukan);
+      console.log(dogukan.greeting); // helloDk
+      Person.prototype.changeisim = function (name) {
+        this.isim = name;
+      };
+      console.log(dogukan.changeisim("veysel"));
+      console.log(dogukan);
+
+      // console.log(dogukan.greeting);
+      /* Person.prototype.rename = function (name) {
+        this.isim = name; 
+      }; */
+      //console.log(dogukan);
+      //console.dir(dogukan.greeting2("veysel"));
+      //console.log(dogukan);
+      //console.log(dogukan.rename("hatun"));
+      //console.log(dogukan.isim);
+    </script>
+  </body>
+</html>

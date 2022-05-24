@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class GithubUser {}
+      console.log(GithubUser); //class GithubUser {}
+      let newUser = GithubUser;
+      console.log(newUser); //class GithubUser {}
+
+      class Rectangle {
+        constructor(height, width) {
+          this.height = height;
+          this.width = width;
+        }
+        changeheight(number) {
+          return (this.height = number);
+        }
+      }
+      const p = new Rectangle(12, 13);
+      console.log(p);
+      p.changeheight(31);
+      console.log(p);
+      console.log("=================");
+      console.log("=================");
+      console.log("=================");
+      function CreateGithub(username, bilinPlan = "free") {
+        this.username = username;
+        this.bilinPlan = bilinPlan;
+        this.repositories = [];
+      }
+      CreateGithub.prototype.changeusername = function (name) {
+        return (this.username = name);
+      };
+      CreateGithub.prototype.addrepositories = function (name) {
+        return this.repositories.push("hatun");
+      };
+
+      let abc = new CreateGithub("veysel");
+      console.log(abc);
+      // console.log("=================");
+      // console.log("=================");
+      // console.log("Yukardaki sntax ile asagidaki synatx ayni");
+      // console.log(
+      //   "Yukaridaki consturcto function assagidaki class ile yazilimi"
+      // );
+
+      // class Create2github {
+      //   constructor(username, bilinPlan = "free") {
+      //     this.username = username;
+      //     this.bilinPlan = bilinPlan;
+      //     this.repositories = [];
+      //   }
+      //   changename() {
+      //     return (this.username = "Aysel");
+      //   }
+      //   addreposomething() {
+      //     return this.repositories.push("WhatsUp");
+      //   }
+      // }
+
+      // let ab = new Create2github("Alex");
+      // console.log(ab);
+      // console.log(ab.changename()); //Aysel
+      // console.log(ab);
+      // class Laptop {
+      //   constructor(year, hd) {
+      //     this.year = year;
+      //     this.hd = hd;
+      //   }
+
+      //   checkSpecs() {
+      //     return `Year: ${this.year}, HD: ${this.hd}`;
+      //   }
+      // }
+      // class Macbook extends Laptop {
+      //   constructor(year, hd, color) {
+      //     super(year, hd);
+      //     this.color = color;
+      //   }
+      // }
+
+      // console.dir(Macbook);
+
+      // function LittleMouse(color) {
+      //   this.color = color;
+      //   this.sound = "Squeak";
+      //}
+      drinkInventory = {
+        1: { name: "Sunny Delight", stock: 5 },
+        2: { name: "Diet Soda", stock: 3 },
+        3: { name: "Bottled Water", stock: 4 },
+      };
+      class VM {
+        constructor(inventory) {
+          this.inventory = inventory;
+        }
+      }
+      drinkVendingMachine = new VM(drinkInventory);
+      console.log(drinkVendingMachine); // VM {inventory: {…}}
+      console.log(Object.values(drinkVendingMachine)); //[{…}]
+      console.log(Object.keys(drinkVendingMachine)); // ['inventory']
+      let sorted = ["Dad", "Mom", "Significant Other"];
+      let unsorted = sorted.sort();
+      console.log(unsorted);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+}
+.blogs {
+  display: flex;
+  background-color: greenyellow;
+  /*   flex-direction: column;
+ */
+  flex-direction: row;
+  /*   flex-direction: row-reverse;
+ */
+  /*   flex-direction: column-reverse; */
+
+  /*   align-items: flex-end;
+ */
+  /*  align-items: stretch; */
+  /*   align-items: center;
+ */
+  /*   justify-content: space-between;
+ */
+  flex-wrap: wrap; /* ekrani kuculttugun zaman blocka degdigi zaman hemen alta atar */
+}
+.blog {
+  padding: 20px;
+  margin: 20px;
+  flex-basis: 250px;
+}
+.blog1 {
+  background-color: yellow;
+  /* flex: 1;  */ /* kaplamasi gereken yeri soyler yani 1 birimlik yer kaplar */
+  /* order: 5; */ /* order numarasina gore siralanir */
+  /*  flex-shrink: 1; */ /* burda flex growun tam tersi yani kucuk olan buyuk olur burda */
+}
+.blog2 {
+  background-color: green;
+  /*   flex: 1; ile flex grow:1 ayni sey
+ */ /*   order: 3;
+ */
+  /*   flex-shrink: 2;
+ */
+}
+.blog3 {
+  background-color: red;
+  /* flex: 1; */
+  /*  order: 7; */
+  /*   flex-shrink: 3;
+ */
+}
+
+@media (max-width: 760) {
+  .blogs {
+    flex-direction: column;
+  }
+}

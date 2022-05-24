@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for each method accept(item,index,array)
+
+      const numbers = [1, 2, 3, 4, 5, 8];
+
+      //   numbers.forEach(consoleItem);
+      //   function consoleItem(item, index, array) {
+      //     console.log(item);
+      //   }
+
+      numbers.forEach((item) => console.log(item));
+      let sum = 0;
+      numbers.forEach((item) => (sum += item));
+
+      console.log(sum);
+      console.log("--------------");
+      const letters = ["a", "b", "c", "c", "d", "a", "h", "g", "g", "b"];
+      let count = {};
+      letters.forEach((item) => {
+        if (count[item]) count[item]++;
+        else count[item] = 1;
+      });
+
+      console.log(count);
+
+      let store = {};
+      for (let key in letters) {
+        if (store[letters[key]]) store[letters[key]]++;
+        else store[letters[key]] = 1;
+      }
+      console.log(store);
+
+      console.log("------");
+      console.log("------");
+
+      function forEach(arr, callback) {
+        for (let i = 0; i < arr.length; i++) {
+          callback(arr[i]);
+        }
+      }
+      //console.log(forEach());
+      const arr = [1, 2, 3, 4, 5];
+
+      forEach(arr, (value) => {
+        console.log(value);
+      });
+      //Now we can call forEach with different functions passed in.
+      //Now our code is more DRY (Don't Repeat Yourself) and more readable.
+      let name = "casey";
+
+      const upperCaseName = () => {
+        name = name.toUpperCase();
+        return name;
+      };
+
+      console.log(`before running upperCaseName name = ${name}`);
+
+      upperCaseName();
+
+      console.log(name);
+
+      console.log(`after running upperCaseName name = ${name}`);
+
+      const friends = {
+        episodes: 236,
+        firstEpisode: "1994",
+        themeSong: "I'll be there for you",
+      };
+
+      const addLastEpisodeDate = (date) => {
+        friends["lastEpisode"] = date;
+      };
+
+      addLastEpisodeDate("5/6/2004");
+
+      console.log(friends);
+
+      //bridge.forEach((item, index, arr) => (arr[index] = item.toUpperCase()));
+      //console.log(bridge);
+
+      function forEach(arr2, callback) {
+        for (let i = 0; i < arr2.length; i++) {
+          callback(arr2[i]);
+        }
+      }
+
+      const arr2 = [1, 2, 3, 4, 5];
+
+      forEach(arr2, (value) => {
+        console.log(value);
+      });
+      //////////////////////
+      //////////////////////
+      /////////////////////
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      let add = (a, b) => a + b;
+      const reduce = (array, startVal, add) => {
+        let value = startVal;
+        array.forEach((index) => {
+          value = add(value, index);
+        });
+        return value;
+      };
+
+      console.log(reduce([5, 3, 2], 3, add));
+      ////////////////////////////////////////
+      ////////////////////////////////////////
+      ////////////////////////////////////////
+      console.log("------");
+      console.log("------");
+      console.log("------");
+      console.log("------");
+
+      const vovelsCount = (str) => {
+        let ref = "aeuio";
+        let filtered = str.split("").filter((item) => ref.includes(item));
+        return filtered;
+      };
+
+      console.log(vovelsCount("look at me")); // ['o', 'o', 'a', 'e']
+
+      let v = [{ a: 0, b: 1 }, { c: 2 }, { d: 3 }];
+      for (let key in v) {
+        console.log(v[key]);
+      }
+      /*
+            {a: 0, b: 1}
+            {c: 2}
+            {d: 3}
+      */
+      for (let key in v) {
+        console.log(v);
+      }
+      /*
+      [{…}, {…}, {…}]
+      [{…}, {…}, {…}]
+      [{…}, {…}, {…}]
+       */
+
+      for (let key in v) {
+        console.log(key);
+      }
+      /*
+            0
+            1
+            2
+            */
+      for (let key of v) {
+        console.log(key);
+      }
+      /*
+      {a: 0, b: 1}
+            {c: 2}
+            {d: 3}
+      */
+      for (let key of v) {
+        console.log(v);
+      }
+      /*
+      [{…}, {…}, {…}]
+      [{…}, {…}, {…}]
+      [{…}, {…}, {…}]
+
+      */
+      for (let key of v) {
+        console.log(v);
+      }
+      /*
+
+      */
+
+      let aysel = { a: 0, b: 1 };
+      if ("c" in aysel) {
+        console.log("true");
+      } else {
+        console.log("false");
+      }
+      let veys = {
+        oneIncrementer() {
+          return (total += 1);
+        },
+        tensIncrementer() {
+          return (total += 10);
+        },
+        getValue() {
+          return total;
+        },
+        setValue(val) {
+          return (total = val);
+        },
+      };
+
+      console.log(Object.keys(veys)); // ['oneIncrementer', 'tensIncrementer', 'getValue', 'setValue']
+      console.log(Object.values(veys)); //[ƒ, ƒ, ƒ, ƒ];
+    </script>
+  </body>
+</html>

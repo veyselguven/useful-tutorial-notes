@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>merhaba diyarbakir</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const numbers = [1, 2, 3, 4, 5];
+
+      const a = numbers.every(isPostive);
+      // it  takes index and array aswell
+      function isPostive(item) {
+        return item > 0;
+      }
+      // const ab = numbers.every((item) => item > 0);
+      console.log(a); // return true , all element bigger than zero
+      // if any of item smaller than zero , it return false
+
+      const persons = [
+        {
+          name: "Florin",
+        },
+        { name: "ivan" },
+        { name: "Liam" },
+        {
+          surname: "Jai",
+        },
+      ];
+
+      const result = persons.every((person) => person.name !== undefined);
+      console.log(result); // false
+
+      const abc = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      const res = abc.every((arr) => Array.isArray(arr)); //true
+
+      var longestCommonPrefix = function (strs) {
+        if (strs.length == 0) {
+          return "";
+        }
+        let prefix = strs[0];
+
+        for (let i = 1; i < strs.length; i++) {
+          while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1);
+          }
+        }
+        return prefix;
+      };
+    </script>
+  </body>
+</html>

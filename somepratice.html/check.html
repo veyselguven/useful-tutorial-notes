@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function win() {
+        this.win = true;
+      }
+      const myobj = { name: "veysel", surname: "basbaydar" };
+      win.call(myobj);
+      console.log(myobj);
+
+      const vowelsCount = (string) => {
+        let ref = "aeiou";
+        let total = 0;
+        for (let i = 0; i < string.length; i++) {
+          if (ref.includes(string[i].toLowerCase())) total += 1;
+        }
+        return total;
+      };
+
+      console.log(vowelsCount("AeIoU")); //5
+      console.log(vowelsCount("Hello World!")); //3
+      console.log(vowelsCount("")); //0
+
+      /*
+
+       var vowelsCount = function (str) {
+              var vowelArray = ["a", "e", "i", "o", "u"];
+              var count = 0;
+              for (var letter in vowelArray) {
+                for (var i in str) {
+                  if (vowelArray[letter] === str[i].toLowerCase()) {
+                    count += 1;
+                  }
+                }
+              }
+              return count;
+       };
+
+      */
+
+      function Vehicle(licensePlate, color) {
+        this.licensePlate = licensePlate;
+        this.color = color;
+      }
+      Vehicle.prototype.beep = function () {
+        return "BEEP, BEEP";
+      };
+      Vehicle.prototype.changeColor = function (name) {
+        return (this.color = name);
+      };
+
+      function Truck(licensePlate, color, transmission) {
+        Vehicle.call(this, licensePlate, color);
+        this.transmission = transmission;
+      }
+      Truck.prototype = Object.create(Vehicle.prototype);
+      Truck.prototype.constructor = Truck;
+
+      var reduceRight = function (arr, startValue, combiningFunc) {
+        var currentValue = startValue;
+        for (var i = arr.length - 1; i >= 0; i--) {
+          currentValue = combiningFunc(currentValue, arr[i]);
+        }
+        return currentValue;
+      };
+
+      ///////////////////////////////////////
+      //////////////////////////////////////
+      /////////////////////////////////////
+
+      var reduceRightRecursive = function (arr, startValue, combiningFunc) {
+        var currentValue = startValue;
+        if (arr.length === 0) {
+          return startValue;
+        }
+        var nextStartValue = combiningFunc(currentValue, arr.pop());
+      };
+    </script>
+  </body>
+</html>

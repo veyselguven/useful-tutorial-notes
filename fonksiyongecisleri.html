@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Function gecisleri</title>
+
+</head>
+<body>
+<u> Alex </u>
+
+<script  type="text/javascript">
+	
+/*
+Fonksiyon Gecisleri
+
+Calisan fonksiyonlar kendi iclerinden cikarak baska fonskiyonlara gecis yapabilirler ve tekrar o fonksiyona geri deger dondurulebilir.
+*/
+
+
+const addFive =function	(num,veysel){
+
+	console.log(num+veysel());
+}
+
+addFive(10,function(){return 5;})
+
+
+// ayrica bir fonksiyonu baska bir fonsiyonun return ifadesinde de kullanabiliriz.
+
+const ad=function(num){
+	return function	double()
+{ console.log(num*2)
+}
+}
+ ad(8)();
+ ad(9)();
+ ad(7)();
+
+console.log('------------');
+
+const result =ad(10);
+
+result();
+
+
+console.log('------------');
+
+
+
+// IIFE immidiately invocable Function Expression
+
+
+(function (){
+	console.log(5+12);
+})();                      
+// bu sekilde olusturdugumuz anda cagirmasini istedigimiz fonksiyonu yapmis olduk.
+
+
+/*
+sum();
+console.log(sum);
+*/
+
+document.write('<br/>')
+
+var islem1=function(yap1){
+
+yap1(30+20);
+}
+
+var islem2=function(yap2){
+
+	document.write(10-yap2);
+}
+
+
+
+islem1(islem2);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

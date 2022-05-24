@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function GithubUser(username, bilingPlan = "free") {
+        this.username = username;
+        this.bilingPlan = bilingPlan;
+        this.depo = [];
+      }
+      GithubUser.prototype.createdepo = function (name) {
+        return this.depo.push({ name });
+      };
+      GithubUser.prototype.editbiling = function (plan) {
+        return (this.bilingPlan = plan);
+      };
+      GithubUser.prototype.changeusername = function (newName) {
+        return (this.username = newName);
+      };
+      function GitHubAdmin(username) {
+        GithubUser.call(this, username, "paid");
+        // this.username = username;
+        // this.bilingPlan = "paid";
+        // this.depo = [];
+        this.adminacces = true;
+      }
+      GitHubAdmin.prototype = Object.create(GithubUser.prototype);
+
+      GitHubAdmin.prototype.updatePermission = function () {
+        return "Succes! the use's permissions updated";
+      };
+      GitHubAdmin.prototype.deleteUser = function (user) {
+        return `${user} is deted from GitHUb`;
+      };
+      GitHubAdmin.prototype.resetUserPaswoord = function (user) {
+        return `the password for ${user} is reset`;
+      };
+      console.dir(GithubUser);
+      const admin = new GitHubAdmin("Veysel");
+      console.log(admin);
+      // GitHubAdmin.prototype = Object.create(GithubUser.prototype);
+
+      console.dir(GitHubAdmin);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dfghgsfa</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+const numbers=[1,-2,2,3,-7,undefined];
+
+const filtered=numbers.filter(n => (n===undefined));
+
+console.log(filtered);
+
+
+const odd=numbers.filter(n=> !(n%2==0));
+
+console.log(odd);
+
+
+
+
+
+let s="It was a dark and stormy night.";
+let words=s.split(' ').filter(x=> (x.length>3));
+
+console.log(words);
+
+console.log(s);
+
+
+
+
+
+
+const numbers11=[12,5,8,130,44]
+
+//let veysel= numbers11.filter(x=> x>10);
+//console.log(veysel);
+
+const result = numbers11.filter(function (num) {
+	return num>10;
+
+});
+
+
+console.log(result); 
+
+
+
+const names=['tayfun','cem','ece','burak','gul','mehmet','nese'];
+
+console.log(names.filter(name=> name.length<=4));
+
+
+
+console.log(names.filter(name=> name.includes('e')));
+
+
+
+
+const names123=['florin','Ivan','Liam'];
+
+const res=names123.includes('Ivan');
+
+console.log(res); //true 
+
+
+
+const fruits=['Aplle','Orange','Mango'];
+
+const rest=fruits.includes('Orange');
+
+
+if(rest){
+	console.log('Yuppy');
+} else{
+	console.log('sad.....Let"s buy an orange')
+}
+
+
+
+
+
+
+
+const users = [
+{
+	name:'Tayfun',
+	age:27
+},
+{
+	name:'Mehmet',
+	age:27
+},
+{
+name :'Gokhan',
+age:32
+}
+
+];
+
+
+
+
+
+
+
+
+console.log(users.filter(user => user.age===27));
+                         //yukardaki user her bir 
+                         // objeye esit oluyor.
+
+
+
+
+
+
+</script>
+</body>
+</html>

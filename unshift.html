@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // unshift bir dizinin baslangicina yeni bir oge ekliyor.
+      //aslinda shiftin tam tersi.yeni bir dizi ekler eski numaralari bir basamak yukseltir.
+
+      var kurslar = new Array("php", "bootstrap4", "Jquery", "Javascript");
+
+      document.write(kurslar[0] + "<br/>"); //php
+
+      kurslar.shift();
+
+      document.write(kurslar[0] + "<br/>"); // bootstrap4
+
+      kurslar.unshift("alex"); //alex,bootstrap4,Jquery,Javascript
+
+      document.write(kurslar);
+    </script>
+  </body>
+</html>

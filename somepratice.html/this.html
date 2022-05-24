@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function whatIsThis() {
+        console.log(this);
+      }
+
+      whatIsThis();
+
+      const tvRemote = {
+        on: function () {
+          return (this.power = "on");
+        },
+        off: function () {
+          return (this.power = "off");
+        },
+        power: "off",
+      };
+
+      tvRemote.on.call({ power: "off", size: "60-inch" });
+      console.log(tvRemote.on.call()); // on
+      console.log("======");
+      const pizza = {
+        toppings: ["Cheese", "Ham"],
+        getToppings: function () {
+          return "Toppings: - " + this.toppings;
+        },
+      };
+
+      console.log(pizza.getToppings());
+
+      const numbers = [1, 2, 5, 33, 244, 5, 332];
+      console.log(Math.max.apply(null, numbers)); //332
+      console.log(Math.max.apply(null)); //-infinity
+      let v = [{ 5: "five", 6: "six", 7: "seven" }];
+      for (let x of v) console.dir(v); //Array(1)
+      for (let x of v) console.log(x); // object {5: 'five', 6: 'six', 7: 'seven'}
+      ////////////////////////
+      ///////////////////////
+      //////////////////////
+      /////////////////////
+      ////////////////////
+      class Stack {
+        constructor() {
+          this.store = [];
+        }
+        getStack() {
+          return this.store;
+        }
+        add(value) {
+          this.store.push(value);
+          return this;
+
+        remove () {
+          let removed = this.store.pop();
+          return removed;
+        }
+      }
+    </script>
+  </body>
+</html>

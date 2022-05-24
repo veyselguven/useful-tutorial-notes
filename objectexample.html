@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>asdgsnfla</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+const compareObject = (obj1,obj2) => {
+	const obj1keys=Object.keys(obj1);
+	const obj2keys=Object.keys(obj2);
+
+	if(obj1keys.length!== obj2keys.length) return false;
+
+	for(let i=0; i<obj1.length; i++){
+
+
+		const currentkey = obj1keys[i];
+
+		if(obj1[currentkey] !== obj2[currentkey]) return	false;
+	}
+
+
+	return	true ;
+}
+
+
+
+
+console.log(compareObject(
+	{name:'veysel', alex:'veafs', merg:'nhni'}
+	,{name:'veysel', surname:'basbaydar'}));
+
+console.log('----------');
+console.log('----------');
+console.log('----------');
+
+
+let transactions = [
+  {
+    name: "Tons of glitter",
+    amount: 70
+  },
+  {
+    name: "Porcelain Pink Flamingos",
+    amount: 92
+  },
+  {
+    name: "Chandelier replacement",
+    amount: 10000,
+  },
+  {
+    name: "Dinner at TGIF x6",
+    amount: 350
+  }
+];
+
+
+const lastFridayNight=(transactions)=>{
+
+
+var total= 0;
+
+for(i=0; i<transactions.length; i++){
+
+	const calculate=transactions[i];
+
+	total+=calculate.amount;
+}
+
+return total;
+}
+
+console.log(lastFridayNight(transactions));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

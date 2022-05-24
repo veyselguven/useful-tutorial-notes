@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      veysel();
+      // console.log(the);
+      function veysel() {
+        console.log("call this function");
+        console.log("will it be call ?");
+      }
+      var the = "the";
+      console.log(the);
+      console.log("--------------");
+      /* jupiter(); // where is jupiter declared?
+      console.log(solarSystem); // where is solarSystem declared??
+
+      function jupiter() {
+        console.log("Mercury is the smallest planet in the solar system!");
+      }
+      jupiter();
+      var solarSystem = "solar system"; */
+      console.log("-----------");
+      /* jupiter(); // where is jupiter declared?
+      console.log(solarSystem); // where is solarSystem declared??
+
+      function jupiter() {
+        console.log("Mercury is the smallest planet in the solar system!");
+      }
+
+      let solarSystem = "solar system";
+
+      // functions are hoisted to the top of the scope */
+      function jupiter() {
+        console.log("Mercury is the smallest planet in the solar system!");
+      }
+      // variables declared with let and const are hoisted but will throw a reference error
+      // because of the Temporal Dead Zone.
+      let solarSystem;
+
+      jupiter(); // where is jupiter declared?
+
+      solarSystem = "solar system";
+      console.log(solarSystem);
+
+      function makeAdder(num) {
+        return function (add) {
+          return add + num;
+        };
+      }
+      /* const add = makeAdder(2);
+       console.log(add(5)); */ // 7   same result
+      //console.log(makeAdder(2)(5)); //7
+    </script>
+  </body>
+</html>

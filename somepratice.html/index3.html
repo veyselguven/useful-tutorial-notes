@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const Jedi = function (firstName, lastName, lightsaber, level) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lightsaber = lightsaber;
+        this.level = level;
+      };
+      let lukeSkywalker = new Jedi("luke", "Skywalker", "Green", "Master");
+
+      //console.log(Object.getPrototypeOf(lukeSkywalker));
+      //console.log(lukeSkywalker.prototype);  // undefined
+      console.log(lukeSkywalker);
+      console.log(Object.getPrototypeOf(lukeSkywalker));
+      console.log("************************");
+      function Person() {
+        this.name = "veysel";
+        this.soyad = "Basbaydar";
+      }
+      //  console.log(Person.prototype)===console.log(Object.getPrototypeOf(person1);
+      let person1 = new Person();
+      console.log(Person.prototype); //{constructor: ƒ}
+      console.log(Object.getPrototypeOf(person1)); // {constructor: ƒ}
+      console.log(Person.prototype); //  {constructor: ƒ}
+      Person.prototype.gender = "male";
+      console.log(Person.prototype); //{gender: 'male', constructor: ƒ}
+      console.log(person1);
+
+      console.log(Person);
+
+      // Object Literals
+
+      const obj = { alex: "hafa" };
+      //console.log(Object.getPrototypeOf(obj));
+      obj.name = "scot";
+      obj["my" + "heigth"] = "6.1";
+      console.dir(obj); // Object: myheigth: "6.1"
+      //name: "scot"
+
+      let array = [1, 4, 4, 32, 4, 2];
+      console.dir(array);
+      array["myproperty"] = "anyvalue";
+      array.myproperty2 = "value2";
+      console.dir(array);
+
+      const myfunc = (val) => {
+        console.log(val);
+      };
+
+      myfunc.isim = "veysel";
+      myfunc["soyisim"] = "basbaydar";
+      console.dir(myfunc);
+
+      function helloWorld() {
+        return "helloWorld";
+      }
+      console.log(Object.getPrototypeOf(helloWorld));
+      console.dir(helloWorld);
+      console.log("-------------------");
+      console.log("-------------------");
+      console.log("-------------------");
+
+      function normalFunction() {}
+      const normalFunctionPrototypeProperty = normalFunction.prototype;
+      const normalFunctionInternalPrototype =
+        Object.getPrototypeOf(normalFunction);
+      normalFunction.prototype.helloWorld = "hello world";
+
+      console.log(normalFunction);
+
+      const addSquareMethod = (arr) => {
+        result = [];
+        for (let i = 0; i < arr.length; i++) {
+          let calculaterInstance = arr[i];
+          calculaterInstance.square = function () {
+            this.total * this.total;
+          };
+          result.push(calculaterInstance);
+        }
+        return result;
+      };
+
+      console.log(addSquareMethod([3, 4, 2]));
+      console.log("----------");
+      console.log("----------");
+      console.log("----------");
+      const createCalculator = () => {
+        return {
+          total: 0,
+          add: function (num) {
+            return (this.total += num);
+          },
+          subtract: function (num) {
+            return (this.total -= num);
+          },
+          value: function () {
+            return this.total;
+          },
+          clear: function () {
+            return (this.total = 0);
+          },
+        };
+      };
+
+      console.log(createCalculator().clear()); //0
+      console.log(createCalculator().add(10)); //0
+
+      console.log("-----------");
+
+      const arr = [];
+      for (let i = 0; i < 5; i++) {
+        arr[i] = [];
+        for (let j = 0; j < 4; j++) {
+          arr[i].push[j + 1];
+        }
+      }
+
+      console.log(arr);
+    </script>
+  </body>
+</html>

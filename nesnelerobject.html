@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+/*
+object nesneler
+
+*/
+ /*
+ var araba={
+
+ 	marka:'ford',
+ 	renk:'gri',
+ 	yil:'2004',
+ 	km:'34500',
+ }
+console.log(araba);
+
+*/
+// fonksiyonla nesne tanimlama
+
+ 
+function araba(marka,renk,yil,km){
+
+	this.markasi=marka;
+	this.rengi=renk;
+	this.yili=yil;	
+	this.kmsi=km;
+}
+
+// bu fonksiyondan yeni bir nesne uretmek icin;
+
+
+
+var araba1 = new araba('kia','kirmizi','2017', 0);
+var araba2=new	araba('toyato','gri','2017','34500')
+
+console.log(araba1);
+console.log(araba2);
+document.write(araba2);
+
+// birde bu sekilde tanimlanir nesneler
+
+ 
+
+var emrah= new Object();
+
+emrah.tc=1234534;
+emrah.boy='190cm';
+emrah.yas='32';
+
+
+
+
+
+document.write('<br/>');
+document.write('<br/>');
+
+
+console.log(emrah);
+
+
+// Nesne alanalarina erisim ve ozellikleri
+
+document.write(emrah.tc+ '<br/>' ); // nesnenin alt ozelliklerine erismis oldum
+
+document.write(emrah.boy);
+document.write('<br/>');
+
+
+
+function araba(marka,renk,yil,km){
+
+	this.markasi=marka;
+	this.rengi=renk;
+	this.yili=yil;
+	this.kmsi=km;
+}
+
+// bu fonksiyondan yeni bir nesne uretmek icin;
+
+
+
+var araba1 = new araba('kia','kirmizi','2017', 0);
+var araba2=new	araba('toyato','gri','2017','34500')
+
+console.log(araba1);
+console.log(araba2);
+
+
+
+document.write(araba1.markasi+'<br/>');
+document.write(araba1.kmsi+'<br/>');
+document.write(araba1.yili+'<br/>');
+document.write(araba1.rengi+'<br/>');
+
+
+
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+
+
+
+
+document.write(araba2.markasi+'<br/>');
+document.write(araba2.kmsi+'<br/>');
+document.write(araba2.yili+'<br/>');
+document.write(araba2.rengi+'<br/>');
+
+
+
+
+
+
+let pusheen={
+	name:'vaysel',
+	color:'gray',
+	age:7
+};
+
+
+pusheen.owner='Meg';
+
+console.log(pusheen);
+
+
+delete pusheen.age;
+console.log(pusheen);
+
+console.log(pusheen.age);
+
+if('name' in pusheen){
+
+	console.log('Her name is ;'+ pusheen.name);
+};
+
+
+for(key in pusheen){
+
+
+
+if( pusheen[key][1]==='y, a, g') { console.log ('harika')}
+	else { console.log('patates')};
+
+}
+/*
+ y
+ a
+ g
+
+*/
+
+
+function compareObjects(obj1, obj2) {
+
+  // loop through the keys in obj1
+  for (let key in obj1) {
+
+    // if obj1 and obj2 have different values for any key...
+    if (obj1[key] !== obj2[key]) {
+
+      // ...immediately return false
+      return false;
+    }
+  }
+
+  // repeat for obj2
+  for (let key in obj2) {
+    if (obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+
+  // if we never found a mismatched key/value pair, return true
+  return true;
+};
+
+
+console.log(compareObjects({name:'veysel',surname:'basbaydar'},{ name:'veysel', surname:'basbaydar'}));
+
+
+
+
+
+
+
+let bilgiler ={
+	isim:'fikret',
+	yas:40,
+	dogumgunu:function(){
+		return	'ismim :'+this.isim + 'yasim :'+this.yas;
+	}
+};
+
+bilgiler.arac='honda';
+
+//delete bilgiler.isim;
+console.log(bilgiler['isim']);
+console.log(bilgiler.dogumgunu());
+console.log(bilgiler.arac);
+
+
+
+
+
+
+function Boo(a,b){
+	this.car=a;
+	this.model=b;
+};
+
+
+const boom =new Boo('honda',2013)
+const boom2= new Boo('toyota',2005)
+console.log(boom);
+
+
+
+
+
+
+console.log('--------');
+console.log('--------');
+console.log('--------');
+
+
+
+const score={
+	evsahibi:0,
+	ziyaretci:0
+};
+
+score.ziyaretci=8, score.evsahibi=0;
+console.log('Ev sahibinin scoru : ' + score.evsahibi + '\n'+ 'Ziyaretcinin scoru: ' + score.ziyaretci);
+
+if(score.evsahibi>score.ziyaretci){
+
+	console.log('Ev sahibi maci kazandi');
+}
+else if ( score.ziyaretci===score.evsahibi){
+	console.log('sonuc berabere')
+}
+
+else{ console.log('Ziyaretci kazandi')};
+
+
+
+let todoList=[];
+function hatirla(nesne){
+	todoList.push(nesne);
+}
+function ilkiniSil(){
+	return todoList.shift();
+}
+function geriEkle(nesne){
+	todoList.unshift(nesne);
+}
+
+hatirla('nesne');
+
+console.log(todoList);
+
+
+</script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Merhaba</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+
+	// for dongusunu kullanarak tum dizi elemanlarini tek seferde yazdirin
+
+var kurslar;
+
+kurslar = new Array('Veysel','Guven','Basbaydar',1,2,3,4,5,9,2,8,5);
+
+
+for(i=0; i<=7; i++){
+
+	document.write(kurslar[i]+"<br/>");
+}
+
+document.write('<br/>')
+
+// for in de degerlerle ugrasmiyoruz, key degerini kurslara atiyoruz hepsi bu
+for(key in kurslar){
+
+
+	document.write(kurslar[key]+"<br/>");
+}
+
+
+// for in de degerlerle ugrasmiyoruz, key degerini kurslara atiyoruz hepsi bu
+document.write('<br/>')
+document.write('<br/>')
+
+
+var basbaydar;
+
+
+basbaydar=new Array('Hatun','veysel','Ahmet','Fidan','Merve','irem','Ceylin');
+
+for(key in basbaydar){
+
+	document.write(basbaydar[key]+ '<br/>');
+}
+
+document.write('<br/>')
+document.write('<br/>')
+
+
+for(i=0; i<=7; i+=2){
+
+	document.write(basbaydar[i]+'<br/>');
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Return fonksiyonu</title>
+
+<script  type="text/javascript">
+	
+
+	// tanimin ve kullanimi bir islemin yurutulmesini durdurur ama bu islerden donen degeride dondurur.
+	// if bloklarin arasindada kullanilir
+
+function carp(a,b){
+
+	return sonuc=a*b
+
+	//return sonuc;
+}
+
+document.write(carp(33,5));
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+
+
+// ornerk
+
+
+function sinif( not){
+
+if(not>0 && not<30) return "F" ; 
+ 
+if(not>30 && not<50) return 'D';
+ 
+if(not>50 && not<80) return "B";  
+if(not>80 && not<90) return	"A";
+ 
+}
+var x=sinif( 60);
+
+document.write('Ogrenci malesef sinavdan '+ x + ' almistir');
+
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+document.write('<br/>');
+
+
+document.write("Ogrencinin sinavdan "+ sinif( 35) +'  almistir');
+
+
+
+
+
+</script>
+
+</head>
+<body>
+<u> </u>
+</body>
+</html>

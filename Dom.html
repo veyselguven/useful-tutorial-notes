@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #emrah {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="udemy">Udemy Kurslar</p>
+    <input id="sec" type="checkbox" />Click please <br /><br />
+    <input id="dont" type="text" placeholder="Write your Name" /><br /><br />
+    <button id="islem" onclick="renklendir()">Id degistir</button>
+    <button id="select" onclick="selected()">Id degistir</button>
+    <script>
+      /* getElementById('name-of-id') */
+      function selected() {
+        document.getElementById(selected);
+      }
+      function renklendir() {
+        document.getElementById("udemy").id = "emrah";
+        document.getElementById("dont").placeholder = "do nor put your name";
+      }
+
+      // getElementById ile biz nesnelere mudahale edebiliyoruz.
+    </script>
+  </body>
+</html>

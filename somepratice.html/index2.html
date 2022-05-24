@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {};
+      obj.name = "Scoot";
+      obj["my" + "height"] = "6.1";
+      console.dir(obj);
+      const array = [1, 2, 3, 4];
+      console.log(array);
+      array["mything"] = "value";
+      array["myother"] = "value2";
+      console.log(array);
+
+      const sausagePizza = {
+        topping: "sausage",
+        size: "large",
+        restaurant: "Table87",
+        deliveryTime: "25 minutes",
+        price: 27.99,
+      };
+
+      const vegetablePizza = sausagePizza; // WHAT IS HAPPENING DURING THE ASSIGNMENT????
+
+      sausagePizza.iAmSausage = "I am a sausage pizza";
+      vegetablePizza.iAmVegetable = "I am a vegetable pizza";
+
+      console.log("sausagePizza", sausagePizza);
+      console.log("vegetablePizza", vegetablePizza);
+      const healthyFoods = {
+        vegetable: "carrot",
+        snack: "nuts",
+        fruit: "apple",
+      };
+
+      const deliciousFoods = {
+        hungry: "Cheeseburger",
+        veryHungry: "Pizza",
+        dessert: "Cheesecake",
+      };
+      let foods = Object.assign({}, healthyFoods, deliciousFoods);
+      console.log(foods);
+      console.log;
+
+      let date = new Date();
+      console.log(date.getDate()); // return 2 it means we are on 2 dcember
+      console.log("Today is " + date.getDate() + " december");
+      console.log("Todar is Week of" + date.getDay() + "th"); //Today is week of 4th
+      let x = "abcd";
+      let xclone = [...x];
+      console.log(xclone);
+
+      const wheelTotal = 5;
+      const color = "blue";
+
+      const bike = {
+        wheelTotal,
+        color,
+        beginPedaling() {
+          console.log("pedaling");
+        },
+      };
+
+      console.log(bike.wheelTotal);
+      bike.beginPedaling();
+      console.log(bike.color);
+
+      const Wookiee = function () {
+        console.log(this);
+      };
+
+      new Wookiee();
+
+      function helloWorld() {
+        return "hello world";
+      }
+
+      console.dir(helloWorld);
+
+      const exampleArray = [];
+      let a = Object.getPrototypeOf(exampleArray);
+      console.log(a);
+      console.log(Object.getPrototypeOf(exampleArray));
+
+      console.log("---------");
+      console.log("---------");
+      function traceTheChain(obj) {
+        let prototypeChainObjects = [];
+        while (Object.getPrototypeOf(obj)) {
+          obj = Object.getPrototypeOf(obj);
+          prototypeChainObjects.push(obj);
+        }
+        return prototypeChainObjects;
+      }
+
+      console.log(traceTheChain({}));
+
+      //const normalFunctionPrototypeProperty = normalFunction.prototype;
+
+      //console.log(normalFunctionPrototypeProperty);
+      let yigitpr = {
+        calculate() {
+          return 2022 - this.year;
+        },
+      };
+
+      let veysel = Object.create(yigitpr);
+      //let asf = veysel.prototype.yigitpr;
+      //console.log(asf);
+      //veysel.name = "veysel";
+      //let veysel = { name: "veysel", year: 2012, job: "student" };
+      console.log(veysel);
+    </script>
+  </body>
+</html>

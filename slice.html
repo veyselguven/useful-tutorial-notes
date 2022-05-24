@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Belirttigimiz indis numarasiyla dizileri ayirabiliriz.
+
+      var kurslar = new Array(
+        "php",
+        "bootstrap4",
+        "Jquery",
+        "Javascript",
+        "Python",
+        "c++",
+        8,
+        9,
+        9,
+        7,
+        5
+      );
+      console.log("avsba", kurslar.slice(1, 0));
+
+      //console.log(kurslar);
+
+      ayir1 = kurslar.slice(2);
+      // ikinci indisten(ikinci indis dahil) sonrasini ayirir
+
+      console.log(ayir1);
+
+      ayir = kurslar.slice(0, 5);
+
+      // indislerin baslangic ve bitis noktalarini belirtebiliyoruz.
+
+      // belirtigimiz indis e kadar alir son belirtilen indisi dahil etmez ama ilkini dahil eder
+
+      sonhal = ayir.join("@");
+
+      console.log(sonhal);
+    </script>
+  </body>
+</html>

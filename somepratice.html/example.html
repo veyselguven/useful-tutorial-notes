@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const products = [
+        { name: "hammer", price: "7.1", rating: "4.3" },
+        { name: "veysel", price: "5.6", rating: "3.5" },
+        { name: "Emre", price: "3.4", rating: "2.7" },
+      ];
+
+      let result = products.map((p) => p.name);
+      console.log(result);
+      let alex = products.map((p) => p.rating < 4);
+      console.log(alex);
+      for (let key of products) {
+        console.log(key);
+      }
+      /*
+      {name: 'hammer', price: '7.1', rating: '4.3'}
+      {name: 'veysel', price: '5.6', rating: '3.5'}
+      {name: 'Emre', price: '3.4', rating: '2.7'}
+      */
+
+      for (let key in products) {
+        console.log(key);
+      }
+      /*
+      0
+      1
+      2
+      */
+      let naime = { name: "hammer", price: "7.1", rating: "4.3" };
+
+      for (let key in naime) {
+        console.log(key);
+      }
+
+      /*
+      naime
+      price
+      rating   
+      */
+
+      //   for (let key of naime) {
+      //     console.log(key);
+      //   }
+    </script>
+  </body>
+</html>

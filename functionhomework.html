@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>merhaba</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+/*
+Dogum yilinizi girdiginizde size yasinizi soyleyen fonksiyonu yazin
+
+/*
+
+/* Fonksiyona 2 parametre gonderin Ad,Yil size soyle karsilasin
+
+
+Adi yasi yaz
+
+
+*/
+
+/*
+function yas(dogumyili){
+
+document.write("Veyselin yasi tam olarak "+ (2021-dogumyili))
+;
+
+}
+yas(1990);
+*/
+
+// 2.yol
+
+/*
+function yashesabi(dyil){
+	
+	var yas=(2021-dyil);
+
+	return yas ;
+}
+
+document.write(yashesabi(1990) + '<br/>');
+
+document.write(yashesabi(1960) + '<br/>');
+
+*/
+
+function yashesabi(ad,dyil){
+	
+	var yas=ad+'yasi'+(2021-dyil);
+
+	return yas ;
+}
+
+document.write(yashesabi('Veysel ',1990) + '<br/>');
+
+
+
+
+// ikinci yol
+
+
+
+function adsoyad(ad,dogumyili){
+
+document.write('Ogrencinin Adi '+ ad +(2021-dogumyili)+' yasinda');
+
+}
+adsoyad('Veysel Guven Basbaydar ',1990);
+
+document.write('<br/>');
+adsoyad('Hatun Basbaydar ',1991);
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

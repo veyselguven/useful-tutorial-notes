@@ -1,0 +1,89 @@
+<!-- Challenge - Part 1
+
+Add the following HTML Elements with the described nesting (parent/child) structure:
+1-)Create an <h1> element. Populate it with text (if you can't think of text, use lorem ipsum)
+2-)Create a <p> element. The <p> element should have 3 sentences or more. 
+Randomly select 4 words inside the text of the<p> element and
+ wrap the words in a <span> tag. The <p> element should be a sibling of the <h1> element
+3-)Create a <ul> element with 4 <li> elements, add text (2-3 words) to each <li>. 
+The <ul> is a sibling of the <h1> and <p> elements
+4-)Create a <ol> element with 4 <li> elements, add text (2-3 words) to each <li>. 
+The <ol> is a sibling of the <h1>, <p>, and <ul> elements
+5-)Create a <div> element and wrap the <h1>, <p>, <ul>, and <ol> elements in the <div>.
+
+Challenge - Part 2
+
+Add the following CSS rules to the document:
+add a <style> element to the top of the HTML file
+1-)Set the "global" font-family to Comic Sans MS and the font color to darkslategray
+think about the inheritance rules we discussed, 
+what element can you select so the font-family and color is inherited?
+The <span> elements are limegreen, underlined, and the font-style is italic
+2-)Set every <li> element's font-family to cursive
+3-)Set the background-color for the <ul> element to indigo and font-size to 44px
+4-)Set the background-color for the <ol> element to steelblue and font-size to 22px
+5-)Set the width of the <div> element to 400px and add the declaration text-align:center;
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    <style>
+      div {
+        font-family: Comic Sans MS;
+        color: darkslategray;
+        width: 400px;
+        text-align: center;
+      }
+
+      span {
+        color: limegreen;
+        text-decoration: underline;
+        font-style: italic;
+      }
+
+      li {
+        font-family: cursive;
+      }
+
+      ul {
+        background-color: indigo;
+        font-size: 22px;
+      }
+
+      ol {
+        background-color: steelblue;
+        font-size: 44px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Hello World</h1>
+      <p>
+        Lorem ipsum <span>dolor</span> sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio
+        euismod <span>lacinia</span> at quis risus <span>sed</span> vulputate
+        odio ut. Viverra orci sagittis eu volutpat odio facilisis. Dui accumsan
+        sit amet nulla facilisi morbi tempus iaculis.
+        <span>Habitant</span> morbi tristique senectus et netus.
+      </p>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+      </ul>
+      <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+      </ol>
+    </div>
+  </body>
+</html>

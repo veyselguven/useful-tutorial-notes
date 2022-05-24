@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const basket = [
+        {
+          name: "Iphone",
+          price: 7000,
+        },
+
+        {
+          name: "Apple Macbook Pro",
+          price: 1400,
+        },
+        {
+          name: "Harman/Kardon,",
+          price: 2500,
+        },
+      ];
+
+      // sepetiminn toplam fiyatini ogrenmek istiyorum.
+
+      let total = basket.reduce((acc, item) => acc + item.name, " "); // IphoneApple Macbook ProHarman/Kardon,
+      console.log(total);
+
+      let isimler = ["Tayfun", "Mehmet", "Ahmet", "Gokhan", "Tayfun"];
+      // her bir isimden kac tane var onu belirlemek icin
+      //{} objenin icersinde acc dige bir deger varmi onu kontrol edicem.
+      //   let say = isimler.reduce((allNames, name) => {
+      //     if ((let = name in allNames)) {
+      //       allNames[name]++;
+      //     } else {
+      //       allNames[name] = 1;
+      //     }
+      //   }, {});
+
+      //   console.log(say);
+
+      let store = {};
+
+      isimler.forEach((item) => {
+        if (store[item]) {
+          store[item]++;
+        } else store[item] = 1;
+      });
+      console.log(store);
+
+      const sum = [1, 2, 3];
+      let veysl = sum.reduce(function (sums, elem) {
+        return sums + elem;
+      }, 3);
+      console.log(veysl); //6
+
+      let multiarry = [
+        [1, 2],
+        [3, 4],
+        [5, 6, 7],
+      ];
+
+      // let flat=multiarry.reduce((acc,number)=>{
+
+      // },[])
+      const people = [
+        { name: "Emre", age: 26 },
+        { name: "Kubra", age: 42 },
+        { name: "Veysel", age: 31 },
+        { name: "Hatun", age: 42 },
+      ];
+
+      let result = people.reduce((acc, person) => {
+        const age = person.age;
+        if (acc[age] === null) acc[age] = [];
+        acc[age].push(person);
+        return acc;
+      }, {});
+      console.log(result);
+    </script>
+  </body>
+</html>

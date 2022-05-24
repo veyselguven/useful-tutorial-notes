@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const addMessage = (message) => {
+        return message;
+      };
+
+      const today = (callback) => {
+        const todaysDateObj = new Date();
+        const message = callback("Today is");
+
+        return message + " " + todaysDateObj.toDateString();
+      };
+
+      console.log(today(addMessage));
+
+      /* describe("callback functions", () => {
+        it("add function", () => {
+          expect(add(1, 2)).toBe(3);
+          expect(add(4, 5)).toBe(9);
+        });
+
+        it("multiply function", () => {
+          expect(multiply(5, 4)).toBe(20);
+          expect(multiply(12, 12)).toBe(144);
+        });
+
+        it("calculate accepts two number arguments and a callback and returns the result of passing both numbers to the callback", () => {
+          expect(calculate(add, 5, 4)).toBe(9);
+          expect(calculate(multiply, 12, 12)).toBe(144);
+        });
+      }); */
+
+      const add = (arg1, arg2) => {
+        return arg1 + arg2;
+      };
+      const multiply = (num1, num2) => {
+        return num1 * num2;
+      };
+
+      function calculate(callback, n1, n2) {
+        return callback(n1, n2);
+      }
+
+      console.log(calculate(add, 5, 2)); // 7
+      console.log(calculate(multiply, 3, 8)); // 24
+    </script>
+  </body>
+</html>

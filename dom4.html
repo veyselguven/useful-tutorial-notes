@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="udemy">Udemy Egitimim Emrah Yuksel</p>
+    <p id="ad">Emrah</p>
+    <p id="soyad">Yuksel</p>
+
+    <ul id="alex">
+      <li>Veysel</li>
+      <li>Basbaydar</li>
+      <li>Hatun</li>
+      <li>Karacuban</li>
+    </ul>
+    <br />
+    <br />
+    <br />
+
+    <button id="button" onclick="deleted()">Delete</button>
+
+    <br />
+    <script>
+      function deleted() {
+        var list = document.getElementById("alex");
+        list.removeChild(list.children[1]);
+      }
+
+      /*innerHtml
+                    bir html ogesinin icerigini degistirebiliriz veya icerigini geri dondurup alabilirz
+                    */
+
+      var e = document.getElementById("udemy").innerHTML;
+      console.log(e); //Udemy Egitimim Emrah Yuksel
+      var ad = document.getElementById("ad").innerHTML;
+      var soyad = document.getElementById("soyad").innerHTML;
+      document.write(ad + " " + soyad + "<br>");
+      //icerik degistirme
+      document.write(
+        (document.getElementById("udemy").innerHTML = "Ben degistim" + "<br>")
+      ); //Ben degistim
+      document.write(
+        (document.getElementById("ad").innerHTML = "Soyadimda Degisti")
+      ); //Soyadimda Degisti
+      //note yukaridakilerde degisir
+    </script>
+  </body>
+</html>

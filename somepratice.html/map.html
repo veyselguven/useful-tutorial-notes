@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayOfNumbers = [2, 3, 4];
+      const doubled = arrayOfNumbers.map((elem) => {
+        return elem * 2;
+      });
+      console.log(doubled);
+      console.log(`original array: ${arrayOfNumbers}`);
+      console.log(`the mapped aray: ${doubled}`);
+      console.log("----------");
+      console.log("---------");
+      const petObj = {
+        Ruby: { age: 12, tv: "The Office", species: "dog" },
+        veysel: { age: 22, tv: "sff", species: "saf" },
+        emre: { age: 25, tv: "dsd", species: "asfs" },
+        habib: { age: 13, tv: "The Olkjhgfffhe", species: "dfag" },
+        serkan: { age: 15, tv: "The Oafgffice", species: "hgfd" },
+        eren: { age: 19, tv: "The sgaf", species: "uyjh" },
+      };
+
+      console.log(Object.keys(petObj)); // ['Ruby', 'veysel', 'emre', 'habib', 'serkan', 'eren']
+      console.log(Object.values(petObj)); //[{…}, {…}, {…}, {…}, {…}, {…}]
+      console.log(Object.entries(petObj)); /*
+                        0: (2) ['Ruby', {…}]
+                        1: (2) ['veysel', {…}]
+                        2: (2) ['emre', {…}]
+                        3: (2) ['habib', {…}]
+                        4: (2) ['serkan', {…}]
+                        5: (2) ['eren', {…}]
+                          */
+      let updateobj = Object.keys(petObj)
+        .map((key) => {
+          return key + " is a " + petObj[key]["species"];
+        })
+        .sort()
+        .join(", ");
+      console.log(updateobj);
+      console.log("====================");
+
+      const indexAndValue = (arr) => {
+        let v = arr.map((value, index) => {
+          const obj = { index: index, value: value };
+          return obj;
+        });
+        return v;
+      };
+
+      console.log(indexAndValue([22, 33, 44, 55]));
+
+      console.log("========");
+      const SwapCase = (str) => {
+        let arr = str.split(" ");
+        let maped = arr.map((char) => char.toUpperCase());
+        return maped.join(" ");
+      };
+
+      console.log(SwapCase("i need to get my 10,000 steps in!"));
+
+      const inYourBudget = (val, arr) => {
+        return arr //filter((item) => item.price < val);  // [{…}, {…}, {…}, {…}]
+          .map((value) => value.item); // ['groceries', 'dvd', 'concert-tickets', 'parking-ticket', 'tv-subscription', 'clothes']
+      };
+
+      console.log(
+        inYourBudget(39, [
+          { item: "groceries", price: 19 },
+          { item: "dvd", price: 29 },
+          { item: "concert-tickets", price: 199 },
+          { item: "parking-ticket", price: 35 },
+          { item: "tv-subscription", price: 33 },
+          { item: "clothes", price: 200 },
+        ])
+      );
+
+      arr = [
+        { name: "Brush Teeth", duration: 2, priority: "high" },
+        { name: "Walk Linus (the dog)", duration: 10, priority: "high" },
+        { name: "Watch Netflix", duration: 60, priority: "low" },
+        { name: "Go to work", duration: 560, priority: "high" },
+        { name: "Ride bike to work", duration: 30, priority: "medium" },
+        { name: "Plan a vacation", duration: 60, priority: "medium" },
+        { name: "Order items in shopping cart", duration: 15, priority: "low" },
+      ];
+      const todoList = (a) => {
+        return a.filter((obj) => obj.priority === "high");
+      };
+
+      console.log(todoList(arr));
+
+      const filtered = (ext, arr) => {
+        return arr.reduce((acc, value) => {
+          if (value.includes(ext)) {
+            acc.push(value);
+          }
+          return acc;
+        }, []);
+      };
+
+      let ne = ["hello.txt", "hello.png", "hell.csv", "mlb.txt", "mls.png"];
+
+      console.log(filtered("txt", ne));
+
+      const aysel = ["hatun.tun", "veysel.tun", "ceylin", "merve", "irem"];
+
+      console.log(aysel.slice(1, -1)); // ['veysel.tun', 'ceylin', 'merve']
+      console.log(aysel.slice(0, -1)); //['hatun.tun', 'veysel.tun', 'ceylin', 'merve']
+
+      console.log("hatun".includes("tun")); //true
+    </script>
+  </body>
+</html>

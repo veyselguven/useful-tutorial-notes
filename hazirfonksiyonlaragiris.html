@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HelloWorld</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	
+/*
+Hazir Fonksiyonlar
+
+encodeURI
+decodeURI
+eval
+isfinite
+isNAN
+number
+parseFloat
+parseInt
+string
+*/
+
+
+var url='my test.html?ad=yuksel&soyad=Meamboog';
+
+console.log(url);
+
+console.log(encodeURI(url));
+
+console.log(decodeURI(url));
+
+
+// EVAL FONKSIYONU
+
+// string degerlerden dinamik bir java script kodu uretir yani onlara islev katar
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+
+var a =10, b=20, c='a+b';
+
+console.log(c);  // a+b
+document.write('<br>')
+
+
+// eval fonksyionuna alirsak (string degerlerden dinamik string uretmesi)
+document.write('<br>')
+document.write('<br>')
+
+
+console.log(eval(c));
+
+
+// isfinite fonk
+/*
+Bir numaranin sonlu,yasal bir numara olup olmadigini kontrol edin:
+
+Number.Max_Value : Degiskenlerin maksimum alabilecegi deger : 1.79E+308.
+Number.Min_Value: Degiskenlerin minumum alabilecegi deger :5e-324.
+Number.POSITIVE_INFINITY : degisken maksium siniri astigi zmana doner.
+Number.Negative_infinity:Degisken minumum siniri astigi zaman doner.
+
+*/
+
+document.write('<br>')
+document.write('<br>')
+var x=isFinite('1323'); 
+
+console.log(x); // true
+document.write('<br>')
+document.write('<br>')
+ var y=isFinite('emrah'); 
+console.log(y); // false
+var z=isFinite(144); 
+document.write('<br>')
+
+console.log(z); // true
+
+console.log(isFinite('1244niefds'));// false
+
+// note ; isFinite gidilen bir degerin sonlu  bir sayi olup olmadigini denetler.
+
+//sayida girsek eger bir stringe o sayiyiyi sayiya cevirebilirse 
+
+
+// isNAN: Bir degerin gecersiz bir sayi olup olmadigini degerlenedirir
+
+
+
+// sayi gecersizse bize olumlu ornegi dondurur.Uretilen deger NAN a esitse true degerini dondurur.
+
+document.write('<br>')
+document.write('<br>')
+
+
+
+var i=5, k=6, s=i+k;
+
+var d=isNaN(s);
+
+if(isNaN(s)){
+
+console.log(d +'bu bir sayi degildir')
+} else{
+ 
+console.log(d+" "+ 'Bu bir sayidir');  // false Bu bir sayidir. // cikar
+}
+
+//i ye bir string degre atarsak True cikar, i ile k yi matametiksel olarak toplayamadigi icin true atar.Zaten isNAN tam ters mantik sayi olmazsa  true dondurur, sayi olursa false dondurur.
+
+
+
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+document.write('<br>')
+
+
+var m='123';
+
+console.log(typeof m); // string cikar
+
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+
+var g='123';
+
+ // '241 432' => bu sekilde varsa NaN ciktisini verir.
+
+console.log(typeof Number(g)); 
+document.write('<br>');
+
+var j=false;
+console.log(Number(j)+'<br/>'); // false O dir 
+// true 1 dir.
+
+// number false zero true 1
+
+
+// parseFloat , java script parseFloat metodunda aldigimiz string parametresini float tipine donusturuyor.
+document.write('<br>');
+document.write('<br>');
+
+var o = parseFloat('10');
+console.log(o); // 10
+document.write('<br>');
+var f = parseFloat('10 yasindayim');
+console.log(f); //  10 olarak cikar. Bastaysa deger direk degeri verir.
+
+// sonundaysa deger yani ' yasindayim 10' // NaN degerini verir.
+
+var abc=parseFloat('2s4f');
+console.log(abc);
+
+// '555 434 625' degerini ise 55 dondurur, ilk yakaladigini sayisal float tipine cevirir.
+document.write('<br>');
+document.write('<br>');
+
+
+var t =parseInt('1234567');
+console.log(t); // 1234567 degerinin donduru
+
+document.write('<br>');
+
+// '12345 emrah' / ilk gordugu sayi dondurur.
+
+// asagidakiler ornegin 11 in 14 luk sisteme gore karsiligi nedir demek.
+console.log(parseInt('11',14));
+document.write('<br>');
+console.log(parseInt('11',3));
+document.write('<br>');
+console.log(parseInt('11',1));
+document.write('<br>');
+console.log(parseInt('11',10));
+document.write('<br>'); 
+console.log(parseInt('11',7));
+
+
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+
+
+var n =Boolean(0);
+
+console.log(n); // false  1 i true dondurur
+
+ var c='24234'
+console.log(typeof String(c)); // string olarak dondurur.
+
+
+var p=new Date();
+
+console.log(String(p));
+
+
+
+
+
+var search='1344';
+var asf=Number(search[0])
+console.log(typeof asf);
+
+
+
+
+
+</script>
+</body>
+</html>

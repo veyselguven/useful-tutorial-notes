@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "Emre", age: 26 },
+        { name: "Kubra", age: 42 },
+        { name: "Veysel", age: 31 },
+        { name: "Hatun", age: 42 },
+      ];
+
+      let result = people.reduce((acc, person) => {
+        const age = person.age;
+        if (acc[age] == null) acc[age] = [];
+        acc[age].push(person);
+        return acc;
+      }, {});
+
+      const getPopulation = (arr, countries) => {
+        return arr.reduce((accum, country) => {
+          if (countries.includes(country.name) || countries.length === 0) {
+            return accum + country.population;
+          }
+          return accum;
+        }, 0);
+      };
+      const keyifyArrayOfObjects = (string, array) => {
+        return array.reduce((acc, superobj) => {
+          acc[superobj[string]] = superobj;
+          return acc;
+        }, {});
+      };
+
+      const powerLevelAverage = (arr) => {
+        return Math.round(
+          arr.reduce((accum, superheroObj) => {
+            return accum + superheroObj.powerLevel;
+          }, 0) / arr.length
+        );
+      };
+
+      const mapReduce = (array, func) => {
+        return array.reduce((acc, value) => {
+          acc.push(func(value));
+        }, []);
+      };
+
+      const filterReduce = (array, func) => {
+        return array.reduce((acc, value) => {
+          if (func(value)) acc.push(value);
+          return acc;
+        }, []);
+      };
+      const inYourBudget = (total, array) => {
+        let filtered = array.filter((obj) => obj.price < total);
+        return filtered.map((value) => value.item);
+      };
+    </script>
+  </body>
+</html>

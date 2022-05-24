@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		functions
+	</title>
+</head>
+<body>
+
+<button onclick="a();">Hadi bakalim tikla</button>
+
+
+<script type="text/javascript">
+
+/*
+	
+function helloworld(){
+	console.log('hello veysel');
+}
+
+
+function hello (){
+	console.log('merhaba');
+	helloworld();
+}
+
+hello(); // calistirir
+*/
+
+
+// Fonksiyonlara parametre atamak ve fonksiyondan geri donus almak
+
+//1-) Bir fonksiyon bir veya birden fazla parametre alabilir veya hic almayabilir
+//2-) Bir fonksiyon disari bilgi gonderebilir(return) veya gondermeyebilir
+
+// 3-)Mumkunse fonksiyonun bagimliliklarini azaltmak gerekir.
+
+/*var a= function sing(){
+
+console.log('Merhaba dunya');
+console.log('Hayda Veysel');
+console.log('Milliyet');
+}
+
+a();
+console.log('----------');
+a();
+*/
+ 
+/*
+
+function toplam(sayi1,sayi2){
+
+
+console.log(sayi1+sayi2);
+
+}
+
+toplam(10,20);
+toplam(30,50);
+toplam(40,39);
+toplam(22,30);
+*/
+
+
+function toplam(sayi1,sayi2){
+ return (sayi1+sayi2);
+}
+
+var Total=toplam(10,300);
+
+
+console.log(Total);
+
+
+// veya
+
+console.log(toplam(20,40));
+console.log(toplam(20,34));
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

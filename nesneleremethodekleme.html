@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>method add</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+/* nesnelere metdod ekleme
+
+*/
+
+
+
+
+var ogrenci={
+
+ad:'emrah',
+soyad: 'yuksel',
+yas:32,
+
+
+adSoyad:function(){
+	return this.ad+ ' ' + this.soyad +' su an emrah '+this.yas
+},
+
+
+yashesaplama:function(){
+	return (2017-this.yas);
+
+}
+
+}
+
+
+document.write(ogrenci.adSoyad()+'<br/>');
+
+document.write(ogrenci.yashesaplama()+'<br/>');
+
+
+
+
+
+
+// nesneye dayali programlamalarda fonksiyonlara method deniliyor.
+// nesnelerde degiskenlerdir.Ancak nesneler bircok deger icerebilir.
+
+//Methodlar ,Nesneler uzerinde gerceklestirilebilecek eylemlerdir.
+//Methodlar,fonksiyon tanimlari olarak ozelliklerde saklanir.
+//Bir nesne tanimi birden cok satira yayilabilir.
+
+
+var carname="Nissan";
+document.write(carname);
+document.write('<br/>');
+
+
+
+
+var car={
+name:'nissan',
+model:'400A',
+color:'Black',
+carstart:function(){
+return this.name+ ' ' +this.model + ' calistirildi.';
+},
+
+cardrive:function(){
+return this.name+ ' ' +this.model + ' arac kullaniliyor.'
+},
+carbrake:function(){
+return this.name+ ' ' +this.model + ' frene basildi.'
+},
+carstop:function(){
+return this.name+ ' ' +this.model + ' durduruldu.'
+}
+
+};
+
+console.log(car.carstart());
+
+
+document.write(car.carstart()+'<br/>');
+
+
+document.write(car.color+'<br/>');
+
+document.write(car.cardrive()+'<br/>');
+
+document.write(car.carstop()+'<br/>');
+
+document.write(car.cardrive()+'<br/>');
+
+
+var x=new String();  // x i nesne turunde string istiyorum demek
+var y=new Boolean();  // [ bu onerilen yontem degildir bu sekilde nesneyi belirliten seylere donusturulmemelisiniz.]
+
+// Stringler,Numberlar, ve Booleanlar i Nesneler olarak Beyan etmeyin ! String,Number ve Boolean nesnelerinden kacinin.Kodunuzu karmasiklastiriyor ve uygulama hizinizi yacaslatiryor.
+var z=new Number();
+
+// veya su sekilde de cekilebilir. 
+document.write(car['name']);
+
+
+// bir javascript degiskeni new anahtariyla ilan edildiginde , degisken bir nesne olarak olusturulur.
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

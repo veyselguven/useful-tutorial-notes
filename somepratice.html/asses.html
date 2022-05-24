@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr1 = [3, 2, 5, 2, 35, 5];
+      let arr2 = arr1.slice(0);
+      console.log(arr2);
+      let arr4 = [...arr1];
+      console.log(arr4);
+
+      const student = [
+        {
+          userid: "steven",
+          name: "steven2",
+          passFail: true,
+        },
+        {
+          userid: "deb",
+          name: "debbie2",
+          passFail: true,
+        },
+        {
+          userid: "maxv",
+          name: "Maxx324",
+          passFail: false,
+        },
+      ];
+      let studenobj = student.reduce((acc, person) => {
+        acc[person.userid] = person;
+        return acc;
+      }, {});
+      console.log(studenobj);
+
+      const myObj2 = {
+        a1: 4,
+        a2: 22,
+        a3: [1, 2, 3],
+        a4: "Fullstack",
+        a5: 10,
+      };
+      let keys = Object.keys(myObj2);
+      console.log(keys);
+    </script>
+  </body>
+</html>

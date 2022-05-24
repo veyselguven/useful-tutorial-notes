@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let healthyFoods = {
+        vegetable: "carrot",
+        snack: "nuts",
+        fruit: "apple",
+      };
+
+      const deliciousFoods = {
+        hungry: "Cheeseburger",
+        veryHungry: "Pizza",
+        dessert: "Cheesecake",
+      };
+
+      const abc = "abc";
+      const abcClone = [...abc];
+
+      console.log(abcClone);
+      /////////////
+      console.log("---------");
+
+      const myArray = ["a", "b", "c", "d", "e", "f", "g"];
+      console.log(myArray.hasOwnProperty("length")); //true
+      console.log(myArray.hasOwnProperty("x")); // false;
+      console.log(myArray.hasOwnProperty("1")); // true because it shows index number as a property
+
+      const copyOfmyArray = myArray.slice();
+      console.log(copyOfmyArray);
+      console.log(myArray);
+      console.log(copyOfmyArray === myArray);
+
+      //console.log(copyOfmyArray === myArray); // false
+
+      //console.log(Object.is(copyOfmyArray, myArray)); // false
+
+      function traceTheChain(obj) {
+        let prototypeChainObjects = [];
+        while (Object.getPrototypeOf(obj)) {
+          obj = Object.getPrototypeOf(obj);
+          prototypeChainObjects.push(obj);
+        }
+        return prototypeChainObjects;
+      }
+
+      console.log(traceTheChain({ a: 1 }));
+
+      //   function puppyFactory(name, breed) {
+      //     return {
+      //       name,
+      //       breed,
+      //     };
+      //   }
+
+      //   const donut = puppyFactory("donut", "bulldog");
+
+      //   console.log(donut);
+      function puppyFactory(name, breed) {
+        return {
+          name,
+          breed,
+          bark() {
+            console.log("Ruff, Ruff");
+          },
+          sleep() {
+            console.log("zzzZZZZZzzzz");
+          },
+        };
+      }
+      console.dir(puppyFactory.prototype);
+      const donut = puppyFactory("donut", "bulldog");
+
+      console.log("the donut instance", donut);
+
+      console.log(donut.sleep());
+      console.log(donut.bark());
+      console.log("-------------- ");
+      console.log("-------------- ");
+      console.log("-------------- ");
+
+      const internalPrototype = {
+        bark() {
+          console.log("Ruff, Ruff");
+        },
+        sleep() {
+          console.log("zzzZZZZZzzzz");
+        },
+      };
+
+      console.log(
+        Object.assign(Object.create(internalPrototype), { a: 1, b: 2 })
+      );
+
+      //   function puppyfactory(name, breed) {
+      //     return Object.assign(Object.create(internalPrototype), { name, breed });
+      //   }
+    </script>
+  </body>
+</html>

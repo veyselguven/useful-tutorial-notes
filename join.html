@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var kurslar = new Array("php", "bootstrap4", "Jquery", "Javascript");
+
+      document.write(kurslar.join("*"));
+
+      document.write("<br/>");
+
+      /// dizileri ekrana yansitirken ayrac belirtebiliyoriz, Bu islemi degiskene aktarabilirsiniz.
+
+      console.log(typeof kurslar);
+      var e = kurslar.join("-");
+
+      document.write(e);
+      console.log(e);
+      console.log(typeof e);
+
+      // join create to new string from the array.
+
+      const countries = ["romania", "usa", "india"];
+
+      const rest = countries.join(" ");
+      //console.log("rest", rest);
+
+      console.log(rest.split(" "));
+
+      console.log(typeof rest);
+      console.log(typeof countries);
+
+      console.log(rest);
+
+      number122 = ["a", "b", "c"];
+
+      let a = number122.join("");
+
+      console.log(a);
+    </script>
+  </body>
+</html>

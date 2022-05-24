@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function hello(str) {
+        if (str === undefined) return "Hello!";
+        else return `Hello, ${str}!`;
+      }
+
+      console.log(hello("Fred"));
+
+      const setPrototiesOnObjLiteral = (obj) => {
+        (obj.x = 7),
+          (obj["y"] = 8),
+          (obj.onePlus = (num) => {
+            return num + 1;
+          });
+        return obj;
+      };
+      console.log(setPrototiesOnObjLiteral({ a: 1 }));
+
+      const setPropertiesOnArrayObj = (arr) => {
+        arr.hello = function () {
+          return "Hello!";
+        };
+        arr["full"] = "stack";
+        arr[0] = 5;
+        arr.TwoTime = (num) => {
+          return num * 2;
+        };
+      };
+
+      //   const setPropertiesOnFunctionObj = (functionObject) => {
+      //     functionObject.functionObject = function () {
+      //       return "I am a function object, all functions are objects! Function can have their own properties too!";
+      //       functionObject.year = 2015;
+      //       functionObject.divideByTwo = function (num) {
+      //         return num / 2;
+      //       };
+      //       functionObject.prototype.helloWorld = function () {
+      //         return "Hello World";
+      //       };
+      //       //return functionObject;
+      //     };
+      //   };
+      //   console.log(setPropertiesOnFunctionObj({}));
+
+      //   const CreateCalculator = () => {
+      //
+
+      //     return {
+      //       total: 0,
+      //       value: function () {
+      //         return this.total;
+      //       },
+      //       add: function (num) {
+      //         return (this.total += num);
+      //       },
+      //       subtract: function (num) {
+      //         return (this.total -= num);
+      //       },
+      //     };
+      //   };
+      //   CreateCalculator().add(3);
+      //   CreateCalculator().subtract(2);
+      //   console.log(CreateCalculator().value());
+      //   console.log(CreateCalculator().add(3));
+      //   console.log(CreateCalculator().subtract(2));
+
+      const repeat = (str, num) => {
+        let result = "";
+        for (i = 0; i < num; i++) {
+          result += str;
+        }
+        return result;
+      };
+
+      console.log(repeat("yo", 10));
+
+      const sum = (arr) => {
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+          total += arr[i];
+        }
+        return total;
+      };
+      console.log(sum([10, 2, 3]));
+      function join(arr, delimiter = "") {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+          result.push(arr[i]);
+        }
+        result.join(delimiter);
+      }
+      
+    </script>
+  </body>
+</html>

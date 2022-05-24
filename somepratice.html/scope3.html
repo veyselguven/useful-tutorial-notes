@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*  function fOne() {
+          const one = "1";
+          return function fTwo() {
+            console.log(one);
+          };
+        }
+        console.log(fOne());
+        const returned = fOne();
+        console.log(returned);
+        returned(); */
+      //////////////////
+      //////////////////
+      ///////////////
+
+      function sum() {
+        const startingValue = Math.floor(Math.random() * 100) + 1;
+
+        return function funcFromSum(num) {
+          return num + startingValue;
+        };
+      }
+
+      const calculateSum = sum();
+      console.log(calculateSum);
+      //console.log(calculateSum(22));
+      function func1(a, b, c) {
+        console.log(arguments[0]);
+        // expected output: 1
+
+        console.log(arguments[1]);
+        // expected output: 2
+
+        console.log(arguments[2]);
+        // expected output: 3
+      }
+
+      // func1(1, 2, 3);
+      // let args = Array.from(arguments);
+      // let args = [...arguments];
+      let myArray = [];
+      let count = 1;
+      let v = () => {
+        myArray.push(count);
+        count++;
+      };
+      console.log(v(5));
+
+      let veys = {
+        oneIncrementer() {
+          return (total += 1);
+        },
+        tensIncrementer() {
+          return (total += 10);
+        },
+        getValue() {
+          return total;
+        },
+        setValue(val) {
+          return (total = val);
+        },
+      };
+
+      console.log(Object.keys(veys)); // ['oneIncrementer', 'tensIncrementer', 'getValue', 'setValue']
+      console.log(Object.values(veys));
+      [ƒ, ƒ, ƒ, ƒ];
+    </script>
+  </body>
+</html>
