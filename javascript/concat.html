@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Hello</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // var olan dizileri birlestirerek yeni bir dizi olusturmamiza imkan sagliyor.
 
-<script type="text/javascript">
+      var kurs1 = new Array("php", "bootstrap4");
 
-// var olan dizileri birlestirerek yeni bir dizi olusturmamiza imkan sagliyor.
+      var kurs2 = new Array("JQuery", "Javascript");
 
-	
-var kurs1 = new	Array('php','bootstrap4');
+      var kurs3 = new Array("PHP", "Python");
 
-var kurs2 = new	Array('JQuery','Javascript');
+      document.write(kurs1 + "<br/>");
 
-var kurs3 = new	Array('PHP','Python');
+      document.write(kurs2 + "<br/>");
 
+      var kurslar = kurs1.concat(kurs2, kurs3);
 
-document.write(kurs1+'<br/>');
+      document.write(kurslar + "<br/>");
+      var rotateString = function (s, goal) {
+        if (s.length !== goal.length) return false;
+        return s.concat(s).includes(goal);
+      };
+      let s = "abcde";
+      let g = "cdeab";
+      abc = s.concat(s);
+      if (abc.includes("bc")) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+      console.log(abc);
 
-document.write(kurs2+'<br/>');
-
-
-var kurslar=kurs1.concat(kurs2,kurs3);
-
-document.write(kurslar+'<br/>');
-
-
-
-</script>
-
-</body>
+      //console.log(rotateString(s, g));
+    </script>
+  </body>
 </html>
-
-
